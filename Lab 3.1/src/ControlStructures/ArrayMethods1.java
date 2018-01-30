@@ -5,7 +5,8 @@ public class ArrayMethods1
 	public static void main(String[] args)
 	{
 		String[] a = {"g", "b", "e", "c", "a", "f", "d", "i", "h"};
-		for(String x : a)
+		int[] ints = {5, 4, 3, 1, 9, 8, 7, 4 , 5, 6};
+		for(String x : a)	
 		{
 			System.out.print(x);
 		}
@@ -15,13 +16,37 @@ public class ArrayMethods1
 		{
 			System.out.print(x);
 		}
+		System.out.println();
+		for(int x : ints)	
+		{
+			System.out.print(x);
+		}
+		System.out.println();
+		insertionSort(ints);
+		for(int x : ints)
+		{
+			System.out.print(x);
+		}
 	}
 
 
 	
 	public static void insertionSort(int[] x)
 	{
-		
+		int lock = 0;
+		int t = 0;
+		while(lock < x.length)
+		{
+			t = x[lock];
+			for(int i = lock; i < x.length; i++)
+			{
+				if(x[i] < t)
+				{
+					swap(x, lock, i);
+				}
+			}
+			lock++;
+		}
 	}
 	
 	public static void selectionSort(double[] x)
