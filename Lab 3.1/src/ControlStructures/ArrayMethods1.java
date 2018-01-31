@@ -6,26 +6,40 @@ public class ArrayMethods1
 	{
 		String[] a = {"g", "b", "e", "c", "a", "f", "d", "i", "h"};
 		int[] ints = {5, 4, 3, 1, 9, 8, 7, 4 , 5, 6};
-		for(String x : a)	
-		{
-			System.out.print(x);
-		}
-		System.out.println();
-		bubbleSort(a);
-		for(String x : a)
-		{
-			System.out.print(x);
-		}
-		System.out.println();
+		double[] dubs = {6.4, 3.2, 4.4, 9.9, 0.2, 5.2, 1.2, 7.4, 2.8};
 		for(int x : ints)	
 		{
-			System.out.print(x);
+			System.out.print(x + " ");
 		}
 		System.out.println();
 		insertionSort(ints);
 		for(int x : ints)
 		{
-			System.out.print(x);
+			System.out.print(x + " ");
+		}
+		System.out.println();
+		
+		for(double x : dubs)
+		{
+			System.out.print(x + " ");
+		}
+		System.out.println();
+		selectionSort(dubs);
+		for(double x : dubs)
+		{
+			System.out.print(x + " ");
+		}
+		System.out.println();
+		
+		for(String x : a)	
+		{
+			System.out.print(x + " ");
+		}
+		System.out.println();
+		bubbleSort(a);
+		for(String x : a)
+		{
+			System.out.print(x + " ");
 		}
 	}
 
@@ -34,13 +48,11 @@ public class ArrayMethods1
 	public static void insertionSort(int[] x)
 	{
 		int lock = 0;
-		int t = 0;
 		while(lock < x.length)
 		{
-			t = x[lock];
-			for(int i = lock; i < x.length; i++)
+			for(int i = lock+1; i < x.length; i++)
 			{
-				if(x[i] < t)
+				if(x[i] < x[lock])
 				{
 					swap(x, lock, i);
 				}
@@ -51,7 +63,17 @@ public class ArrayMethods1
 	
 	public static void selectionSort(double[] x)
 	{
-		
+		for(int i = 0; i < x.length; i++)
+		{
+			double d = x[i];
+			for(int j = i; j < x.length; j++)
+			{
+				if(x[j] < d)
+				{
+					
+				}
+			}
+		}
 	}
 	
 	public static void bubbleSort(String[] x)
