@@ -7,40 +7,59 @@ public class ArrayMethods1
 		String[] a = {"g", "b", "e", "c", "a", "f", "d", "i", "h"};
 		int[] ints = {5, 4, 3, 1, 9, 8, 7, 4 , 5, 6};
 		double[] dubs = {6.4, 3.2, 4.4, 9.9, 0.2, 5.2, 1.2, 7.4, 2.8};
+		
+		//integer insertion
 		for(int x : ints)	
 		{
 			System.out.print(x + " ");
 		}
 		System.out.println();
+		long start = System.nanoTime();
 		insertionSort(ints);
+		long end = System.nanoTime();
+		long time = end - start;
 		for(int x : ints)
 		{
 			System.out.print(x + " ");
 		}
 		System.out.println();
+		System.out.println("Time to sort: " + time + " ns");
+		System.out.println();
 		
+		//double selection
 		for(double x : dubs)
 		{
 			System.out.print(x + " ");
 		}
 		System.out.println();
+		start = System.nanoTime();
 		selectionSort(dubs);
+		end = System.nanoTime();
+		time = end - start;
 		for(double x : dubs)
 		{
 			System.out.print(x + " ");
 		}
 		System.out.println();
+		System.out.println("Time to sort: " + time + " ns");
+		System.out.println();
 		
+		//String bubble
 		for(String x : a)	
 		{
 			System.out.print(x + " ");
 		}
 		System.out.println();
+		start = System.nanoTime();
 		bubbleSort(a);
+		end = System.nanoTime();
+		time = end - start;
 		for(String x : a)
 		{
 			System.out.print(x + " ");
 		}
+		System.out.println();
+		System.out.println("Time to sort: " + time + " ns");
 	}
 
 
@@ -65,14 +84,15 @@ public class ArrayMethods1
 	{
 		for(int i = 0; i < x.length; i++)
 		{
-			double d = x[i];
-			for(int j = i; j < x.length; j++)
+			int d = i;
+			for(int j = d; j < x.length; j++)
 			{
-				if(x[j] < d)
+				if(x[j] < x[d])
 				{
-					
+					d = j; 
 				}
 			}
+			swap(x, i, d);
 		}
 	}
 	
